@@ -1,0 +1,23 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+body {
+  /* background: linear-gradient(45deg, #0a0a0a, #3a4452); */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  color: white;
+}
+
+.input-width {
+  width: 500px !important;
+}

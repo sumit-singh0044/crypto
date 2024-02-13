@@ -1,0 +1,134 @@
+header {
+    font-family: 'Protest Revolution', sans-serif;
+    font-size: 2.5rem;
+    color: blueviolet;
+}
+
+.copy1 {
+    margin-top: 20px;
+}
+
+.copy1 a {
+    font-size: 30px;
+}
+
+.copy1 p a {
+    margin-right: 10px;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-width {
+    width: 60% !important;
+    margin-top: 20px;  
+}
+.form-width:hover{
+    box-shadow: 0 0 10px orange;
+}
+.heading{
+    color:  black;
+    width: 900px;
+    display: flex;
+    justify-content:flex-start;
+    border-bottom: 1px solid black;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 30px;
+    
+}
+.para-margin1{
+    margin-left: 15px;
+}
+.para-margin2{
+    margin-left: 36px;
+}
+.para-margin3{
+    margin-left: 158px;
+}
+.para-margin4{
+    margin-left: 81px;
+}
+.para-margin5{
+    margin-left: 65px;
+}
+.para-margin6{
+    margin-left: 75px;
+}
+.para-margin7{
+    margin-left: 75px;
+}
+
+
+
+
+/* CoinList  */
+.coin-container {
+    display: flex;
+    justify-content: center;
+}
+
+.coin-row {
+    display: flex;
+    flex-direction: row;
+    justify-items: start;
+    align-items: center;
+    height: 80px;
+    border-bottom: 1px solid #d7d7d7;
+    width: 900px;
+    color: black;
+}
+
+.coin {
+    display: flex;
+    align-items: center;
+    padding: 24px;
+    min-width: 300px;
+}
+
+.coin img {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+
+.coin h1 {
+    font-size: 16px;
+    width: 150px;
+}
+
+
+
+.coin-data {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+
+.coin-price {
+    width: 110px;
+}
+
+.coin-volume {
+    width: 230px;
+}
+
+.coin-marketcap {
+    width: 155px;
+}
+
+.coin-percent {
+    width: 100%;
+}
+
+.red {
+    color: #f00606;
+}
+
+.green {
+    color: #11d811;
+}
