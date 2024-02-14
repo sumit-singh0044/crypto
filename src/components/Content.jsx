@@ -21,7 +21,7 @@ const Content = () => {
     axios
       .get(
         "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en",
-        { headers } 
+        { headers }
       )
       .then((res) => {
         setCoinData(res.data);
@@ -32,6 +32,12 @@ const Content = () => {
   const filterCoins = coinData.filter((item) =>
     item.name.toLowerCase().includes(coin.toLowerCase())
   );
+
+  const sort = () => {
+    let updateList = [...coinData];
+    updateList.sort((a, b) => b.current_price - a.current_price);
+    setCoinData(updateList);
+  };
 
   return (
     <>
@@ -44,7 +50,12 @@ const Content = () => {
       <div className="heading">
         <p className="para-margin1">Symbol</p>
         <p className="para-margin2">Name</p>
-        <p className="para-margin3">Price</p>
+        <p className="para-margin3">
+          Price
+            <button className="button-size" onClick={sort}>
+              {<i className="fa-solid fa-sort-up"></i>}
+            </button>
+        </p>
         <p className="para-margin4">24 Hour</p>
         <p className="para-margin5">Market Cap</p>
         <p className="para-margin6">24h High</p>

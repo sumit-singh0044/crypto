@@ -18,7 +18,8 @@ const CoinList = ({
           <div className="coin">
             <img src={image} alt="crypto" />
             <h1>
-              {name} ({symbol.toUpperCase()})
+              {name} {"\u00A0"}
+              <span className="special-font">{symbol.toUpperCase()}</span>
             </h1>
           </div>
 
