@@ -7,12 +7,6 @@ const Content = () => {
   const [coin, setCoin] = useState("");
   const [coinData, setCoinData] = useState([]);
 
-  // Define your custom headers
-  const headers = {
-    "Content-Type": "application/json",
-    Authorization: "Bearer your_access_token_here",
-  };
-
   const handleChange = (e) => {
     setCoin(e.target.value);
   };
@@ -21,7 +15,12 @@ const Content = () => {
     axios
       .get(
         "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en",
-        { headers }
+        {
+          headers: {
+            "Content-Type": "application/json;charset=UTF-8",
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
       )
       .then((res) => {
         setCoinData(res.data);
@@ -29,8 +28,10 @@ const Content = () => {
       .catch((error) => console.log(error));
   }, []);
 
-  const filterCoins = coinData.filter((item) =>
-    item.name.toLowerCase().includes(coin.toLowerCase())
+  const filterCoins = coinData.filter(
+    (item) =>
+      item.name.toLowerCase().includes(coin.toLowerCase()) ||
+      item.symbol.toLowerCase().includes(coin.toLowerCase())
   );
 
   const sort = () => {
@@ -52,9 +53,9 @@ const Content = () => {
         <p className="para-margin2">Name</p>
         <p className="para-margin3">
           Price
-            <button className="button-size" onClick={sort}>
-              {<i className="fa-solid fa-sort-up"></i>}
-            </button>
+          <button className="button-size" onClick={sort}>
+            {<i className="fa-solid fa-sort-up"></i>}
+          </button>
         </p>
         <p className="para-margin4">24 Hour</p>
         <p className="para-margin5">Market Cap</p>
